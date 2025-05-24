@@ -1,10 +1,18 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "joel-phaser",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vite"
   },
-  "private": true
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "phaser": "^3.90.0",
+    "vite": "^6.3.5"
+  }
 }
