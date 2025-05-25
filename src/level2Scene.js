@@ -61,7 +61,6 @@ class Level2Scene extends Phaser.Scene {
             frameRate: 10,
             repeat: -1
         });
-        console.log('Animació enemy_walk:', this.anims.get('enemy_walk')); // Depuració
 
         // Jugador (dinosaure)
         this.player = this.physics.add.sprite(100, 200, 'dino');
@@ -183,7 +182,7 @@ class Level2Scene extends Phaser.Scene {
 
         // Transició al final
         if (this.player.x >= this.physics.world.bounds.width - 16) {
-            this.scene.start('GameOverScene', { score: this.score });
+            this.scene.start('GameOverScene', { score: this.score, lives: this.lives });
         }
     }
 }

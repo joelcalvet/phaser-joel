@@ -18,11 +18,9 @@ class StartScene extends Phaser.Scene {
             music.play();
         }
 
-        // Text
-        this.add.text(320, 100, 'El Meu Joc', { fontSize: '48px', color: '#fff' }).setOrigin(0.5);
+        this.add.text(320, 100, 'Dino DESTROYER', { fontSize: '48px', color: '#fff' }).setOrigin(0.5);
         this.add.text(320, 180, 'Prem ESPAI per començar', { fontSize: '24px', color: '#fff' }).setOrigin(0.5);
 
-        // Iniciar el joc
         this.input.keyboard.on('keydown-SPACE', () => {
             lives = 3; // Reinicia les vides
             score = 0; // Reinicia la puntuació

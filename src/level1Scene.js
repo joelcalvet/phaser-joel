@@ -23,8 +23,6 @@ class Level1Scene extends Phaser.Scene {
         const coinLayer = map.createLayer('monedes', tileset, 0, 0);
         const spikeLayer = map.createLayer('spikes', spikeTileset, 0, 0);
 
-        // Depuració: Comprovar IDs dels tiles a la capa terra
-        console.log('Tiles usats a terra:', platformLayer.getTilesWithin().map(tile => tile.index).filter(index => index > 0));
 
         // Col·lisions per al terra
         platformLayer.setCollision([11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34, 41, 42, 43, 44]);
@@ -77,13 +75,10 @@ class Level1Scene extends Phaser.Scene {
                 spike.setFrame(0); // Primer frame de spikes.png
                 spike.body.setSize(16, 16); // Mida de col·lisió
                 spikeLayer.removeTileAt(tile.x, tile.y);
-                console.log('Espiga creada a:', tile.pixelX, tile.pixelY, 'ID:', tile.index); // Depuració
             }
         });
-        console.log('Tiles usats a spikes:', spikeLayer.getTilesWithin().map(tile => tile.index).filter(index => index > 0));
         this.physics.add.collider(this.player, this.spikes, (player, spike) => {
             lives -= 1;
-            console.log(`Col·lisió amb espiga! Vides restants: ${lives}`);
             if (lives <= 0) {
                 this.scene.start('StartScene');
             } else {
